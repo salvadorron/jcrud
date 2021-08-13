@@ -35,33 +35,37 @@ public class MovieView extends JFrame implements ActionListener {
 
 	public void display() {
 
-		this.setTitle("Registro de Peliculas");
+		this.setTitle("Movie Manager Application");
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		this.setLayout(new BorderLayout());
 
-//-------------------------------------------BOTONES DE ARRIBA----------------------------------------------------------------
-
+                /*
+                    TOP BUTTONS
+                */
+                
 		panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
-		btnDelete = new JButton("Borrar");
+		btnDelete = new JButton("Delete");
 		btnDelete.setEnabled(false);
 		btnDelete.addActionListener(this);
 		panel.add(btnDelete);
 
-		btnEdit = new JButton("Editar");
+		btnEdit = new JButton("Update");
 		btnEdit.setEnabled(false);
 		btnEdit.addActionListener(this);
 		panel.add(btnEdit);
 
-		btnNew = new JButton("Nuevo");
+		btnNew = new JButton("New");
 		btnNew.addActionListener(this);
 		panel.add(btnNew);
 
 		this.add(panel, BorderLayout.NORTH);
 
-//-------------------------------------------BOTONES DE ARRIBA----------------------------------------------------------------		
+                /*
+                    END OF TOP BUTTONS
+                */
 
 		model = new Movie();
 
@@ -83,15 +87,21 @@ public class MovieView extends JFrame implements ActionListener {
 
 		this.add(new JScrollPane(board), BorderLayout.CENTER);
 
-//-------------------------------------------BOTONES DE ABAJO----------------------------------------------------------------		
+                /*
+                    BOTTOM BUTTONS
+                */
+                
 		panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
-		btnCancel = new JButton("Cancelar");
+		btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(this);
 		panel.add(btnCancel);
 
 		this.add(panel, BorderLayout.SOUTH);
-//-------------------------------------------BOTONES DE ABAJO----------------------------------------------------------------		
+
+                /*
+                    END OF BOTTOM BUTTONS
+                */
 
 		this.pack();
 
@@ -107,7 +117,7 @@ public class MovieView extends JFrame implements ActionListener {
 
 		Object data[] = {
 
-				m.getTitulo(), m.getDuration(), m.getYear(), m.getGender()
+				m.getTitulo(), m.getLength(), m.getYear(), m.getGenre()
 
 		};
 
@@ -130,9 +140,9 @@ public class MovieView extends JFrame implements ActionListener {
 		this.pos = pos;
 
 		model.setValueAt(m.getTitulo(), pos, 0);
-		model.setValueAt(m.getDuration(), pos, 1);
+		model.setValueAt(m.getLength(), pos, 1);
 		model.setValueAt(m.getYear(), pos, 2);
-		model.setValueAt(m.getGender(), pos, 3);
+		model.setValueAt(m.getGenre(), pos, 3);
 
 	}
 
@@ -149,7 +159,6 @@ public class MovieView extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
 
 		if (arg0.getSource().equals(btnCancel)) {
 
@@ -164,7 +173,7 @@ public class MovieView extends JFrame implements ActionListener {
 
 		if (arg0.getSource().equals(btnDelete)) {
 
-			if (JOptionPane.showConfirmDialog(this, "¿Esta seguro que desea eliminar esta pelicula?", "Borrar",
+			if (JOptionPane.showConfirmDialog(this, "Are you sure do you want to delete this movie?", "Delete Movie",
 					JOptionPane.YES_NO_OPTION) == 0) {
 				controller.delete(board.getSelectedRow());
 

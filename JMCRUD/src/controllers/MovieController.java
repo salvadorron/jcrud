@@ -38,22 +38,22 @@ public class MovieController {
 
 		form.setVisible(true);
 
-		form.setTitle("Nuevo Registro");
+		form.setTitle("New Movie");
 		form.create(model.qty(), new MovieEntity());
 
 	}
 
-	public void update(int pos, String title, String duration, String year, String gender) {
+	public void update(int pos, String title, String length, String year, String genre) {
 
 		MovieEntity aux = new MovieEntity();
 
 		aux.setTitle(title);
 
-		aux.setDuration(duration);
+		aux.setLength(length);
 
 		aux.setYear(year);
 
-		aux.setGender(gender);
+		aux.setGenre(genre);
 
 		if (pos >= model.qty()) {
 
@@ -80,7 +80,7 @@ public class MovieController {
 
 	public void edit(int pos) {
 
-		form.setTitle("Modificar Registro");
+		form.setTitle("Update Movie");
 		form.setVisible(true);
 		form.edit(pos, model.read(pos));
 

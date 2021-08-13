@@ -11,11 +11,11 @@ public class MovieEntity {
 
 	private String title;
 
-	private String duration;
+	private String length;
 
 	private String year;
 
-	private String gender;
+	private String genre;
 
 	public String getTitulo() {
 		return title;
@@ -25,12 +25,12 @@ public class MovieEntity {
 		this.title = title;
 	}
 
-	public String getDuration() {
-		return duration;
+	public String getLength() {
+		return length;
 	}
 
-	public void setDuration(String duration) {
-		this.duration = duration;
+	public void setLength(String length) {
+		this.length = length;
 	}
 
 	public String getYear() {
@@ -41,12 +41,12 @@ public class MovieEntity {
 		this.year = year;
 	}
 
-	public String getGender() {
-		return gender;
+	public String getGenre() {
+		return genre;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 }

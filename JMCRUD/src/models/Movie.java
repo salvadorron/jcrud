@@ -15,20 +15,21 @@ public class Movie extends DefaultTableModel {
 
 	private static final long serialVersionUID = 1L;
 
-	ArrayList<MovieEntity> list = new ArrayList<MovieEntity>();
+	ArrayList<MovieEntity> list = new ArrayList<>();
 
 	public Movie() {
 
-		addColumn("Titulo");
+		addColumn("Title");
 
-		addColumn("Duracion");
+		addColumn("Length");
 
-		addColumn("Año");
+		addColumn("Year");
 
-		addColumn("Genero");
+		addColumn("Genre");
 
 	}
 
+        @Override
 	public boolean isCellEditable(int row, int column) {
 
 		return false;

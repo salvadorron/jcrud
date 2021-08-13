@@ -41,11 +41,11 @@ public class MovieForm extends JFrame implements ActionListener {
 
 		panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
-		btnAcept = new JButton("Aceptar");
+		btnAcept = new JButton("OK");
 		btnAcept.addActionListener(this);
 		panel.add(btnAcept);
 
-		btnCancel = new JButton("Cancelar");
+		btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(this);
 		panel.add(btnCancel);
 
@@ -54,7 +54,7 @@ public class MovieForm extends JFrame implements ActionListener {
 		gridPanel = new JPanel(new GridLayout(8, 0));
 
 		panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		lblTitle = new JLabel("Titulo:");
+		lblTitle = new JLabel("Title:");
 		panel.add(lblTitle);
 		gridPanel.add(panel);
 
@@ -64,7 +64,7 @@ public class MovieForm extends JFrame implements ActionListener {
 		gridPanel.add(panel);
 
 		panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		lblDuration = new JLabel("Duracion:");
+		lblDuration = new JLabel("Length:");
 		panel.add(lblDuration);
 		gridPanel.add(panel);
 
@@ -74,7 +74,7 @@ public class MovieForm extends JFrame implements ActionListener {
 		gridPanel.add(panel);
 
 		panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		lblYear = new JLabel("Año:");
+		lblYear = new JLabel("Year:");
 		panel.add(lblYear);
 		gridPanel.add(panel);
 
@@ -84,7 +84,7 @@ public class MovieForm extends JFrame implements ActionListener {
 		gridPanel.add(panel);
 
 		panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		lblGender = new JLabel("Genero:");
+		lblGender = new JLabel("Genre:");
 		panel.add(lblGender);
 		gridPanel.add(panel);
 
@@ -111,7 +111,7 @@ public class MovieForm extends JFrame implements ActionListener {
 
 		Object datos[] = {
 
-				m.getTitulo(), m.getDuration(), m.getYear(), m.getGender()
+				m.getTitulo(), m.getLength(), m.getYear(), m.getGenre()
 
 		};
 
@@ -129,9 +129,9 @@ public class MovieForm extends JFrame implements ActionListener {
 		this.pos = pos;
 
 		txtTitle.setText(m.getTitulo());
-		txtDuration.setText(m.getDuration());
+		txtDuration.setText(m.getLength());
 		txtYear.setText(m.getYear());
-		txtGender.setText(m.getGender());
+		txtGender.setText(m.getGenre());
 
 	}
 
@@ -170,7 +170,7 @@ public class MovieForm extends JFrame implements ActionListener {
 
 				Toolkit.getDefaultToolkit().beep();
 
-				JOptionPane.showMessageDialog(this, "Debe Llenar Todos Los Campos");
+				JOptionPane.showMessageDialog(this, "you must fill all the fields");
 
 			}
 
